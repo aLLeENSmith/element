@@ -53,6 +53,7 @@
     methods: {
       handleExpand() {
         const { panel, node, isDisabled, config } = this;
+        if(isDisabled) return;
         const { multiple, checkStrictly } = config;
 
         if (!checkStrictly && isDisabled || node.loading) return;
@@ -233,7 +234,7 @@
             'in-active-path': inActivePath,
             'in-checked-path': inCheckedPath,
             'is-active': isChecked,
-            'is-disabled': disabled
+            'is-disabled': isDisabled
           }}
           {...events}>
           { this.renderPrefix(h) }
