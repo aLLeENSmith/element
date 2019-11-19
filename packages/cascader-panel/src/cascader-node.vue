@@ -53,7 +53,7 @@
     methods: {
       handleExpand() {
         const { panel, node, isDisabled, config } = this;
-        if(isDisabled) return;
+        if (isDisabled) return;
         const { multiple, checkStrictly } = config;
 
         if (!checkStrictly && isDisabled || node.loading) return;
