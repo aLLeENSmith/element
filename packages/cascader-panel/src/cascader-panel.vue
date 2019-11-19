@@ -41,6 +41,7 @@ const DefaultProps = {
   children: 'children',
   leaf: 'leaf',
   disabled: 'disabled',
+  disableSelect: 'disableSelect',
   hoverThreshold: 500
 };
 

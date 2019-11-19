@@ -46,6 +46,15 @@ export default class Node {
       !checkStrictly && parent && parent.isDisabled;
   }
 
+  get isDisableSelect() {
+    console.log(this);
+    const { data, parent, config } = this;
+    const disableSelectKey = config.disableSelect;
+    const { checkStrictly } = config;
+    return data[disableSelectKey] ||
+      !checkStrictly && parent && parent.isDisabled;
+  }
+
   get isLeaf() {
     const { data, loaded, hasChildren, children } = this;
     const { lazy, leaf: leafKey } = this.config;

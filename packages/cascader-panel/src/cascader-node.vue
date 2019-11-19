@@ -30,6 +30,9 @@
       isDisabled() {
         return this.node.isDisabled;
       },
+      isDisableSelect() {
+        return this.node.isDisableSelect;
+      },
       checkedValue() {
         return this.panel.checkedValue;
       },
@@ -141,8 +144,9 @@
       },
 
       renderRadio(h) {
-        let { checkedValue, value, isDisabled } = this;
-
+        let { checkedValue, value, isDisabled, isDisableSelect } = this;
+        console.log(this);
+        console.log(isDisableSelect);
         // to keep same reference if value cause radio's checked state is calculated by reference comparision;
         if (isEqual(value, checkedValue)) {
           value = checkedValue;
@@ -152,7 +156,7 @@
           <el-radio
             value={ checkedValue }
             label={ value }
-            disabled={ isDisabled }
+            disabled={ isDisabled || isDisableSelect }
             onChange={ this.handleCheckChange }
             nativeOnClick={ stopPropagation }>
             {/* add an empty element to avoid render label */}
